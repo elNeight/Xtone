@@ -1,0 +1,41 @@
+Row fillRow(String firstName, String lastName, String age, Table table, Num row) {
+
+    table[row][0] = firstName;
+    table[row][1] = lastName;
+    table[row][2] = age;
+
+    return table.newRow(row);
+}
+
+
+Num main() {
+
+    Num rows = 3;
+    Num columns = 3;
+
+    Table table = newTable(rows, columns);
+
+    Row firstRow = fillRow("Petr", "Petrov", "25", table, rows - 3);
+    Row secondRow = fillRow("Ivan", "Ivanov", "23", table, rows - 2);
+    Row thirdRow = fillRow("Sergey", "Sergeev", "21", table, rows - 1);
+
+    Num iterator = columns;
+
+    while(iterator != 0) {
+        print firstRow[iterator - 1]
+        + "   " + secondRow[iterator - 1]
+        + "   " + thirdRow[iterator - 1];
+
+        iterator = iterator - 1;
+    }
+
+    print "";
+    print "|||------------------------------|||";
+    print "";
+
+    while (iterator != 3) {
+        print ((String)(iterator + 1)) + " : " + (String)table.newColumn(iterator);
+        iterator = iterator + 1;
+    }
+
+}

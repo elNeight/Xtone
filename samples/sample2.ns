@@ -1,0 +1,52 @@
+Table getTable() {
+
+    Table table = newTable(4,4);
+
+    table[0][0] = "AAA";
+    table[0][1] = "BBB";
+    table[0][2] = "AAA";
+    table[0][3] = "AAA";
+
+    table[1][0] = "AAA";
+    table[1][1] = "AAA";
+    table[1][2] = "BBB";
+    table[1][3] = "AAA";
+
+    table[2][0] = "BBB";
+    table[2][1] = "AAA";
+    table[2][2] = "AAA";
+    table[2][3] = "BBB";
+
+    table[3][0] = "BBB";
+    table[3][1] = "AAA";
+    table[3][2] = "AAA";
+    table[3][3] = "AAA";
+
+    return table;
+
+}
+
+
+Num main() {
+
+    Num rows = 4;
+    Num columns = 4;
+
+    Table table = getTable();
+
+    print table;
+
+    for(Num i = 0; i < rows; i = i + 1) {
+        for(Num j = 0; j < columns; j = j + 1){
+            if(table[i][j] == "BBB") {
+                table[i][j] = "AAA";
+            }
+            else {
+                table[i][j] = "BBB";
+            }
+        }
+    }
+
+    print table;
+
+}
