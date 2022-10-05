@@ -1,6 +1,5 @@
 import factory.TranslatorFactory;
 import factory.java.JavaTranslatorFactory;
-import processor.LanguageProcessor;
 import processor.TranslatableLanguageProcessor;
 import processor.java.ToJavaLanguageProcessor;
 
@@ -11,7 +10,7 @@ public class Main {
 
         args = new String[]{"D:\\samples\\sample3.ns"};
 
-        TranslatorFactory factory = new JavaTranslatorFactory();
+        TranslatorFactory factory = JavaTranslatorFactory.getTranslatorFactory();
         TranslatableLanguageProcessor processor = new ToJavaLanguageProcessor(factory, args);
         processor.process();
 
